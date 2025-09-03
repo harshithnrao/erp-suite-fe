@@ -1,0 +1,87 @@
+@import "var";
+
+.page {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  width: 380px;
+
+  @include media-xs {
+    width: 300px;
+  }
+
+  .header {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+}
+
+
+.logo-container {
+  margin-bottom: 8px;
+
+  .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 8px;
+  }
+}
+
+.page {
+  background-image: url('/assets/img/backgrounds/login-bg.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 120vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.8); 
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); 
+  padding: 24px;
+  width: 100%;
+  max-width: 500px; 
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button[mat-raised-button] {
+  width: 100%; 
+  margin-top: 16px;
+}
+.login-header {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.4px;
+  text-align: left; 
+  margin-bottom: 16px; 
+}
+
+.app-name {
+  font-family: 'Pangram', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff; 
+  text-align: center;
+}
+
+.form-control {
+  border: 1px solid #caeaf0;
+  border-radius: 4px;
+  font-family: 'Pangram', sans-serif;
+  font-size: 14px;
+}
+
+.label-name {
+  font-family: 'Pangram', sans-serif;
+  font-weight: 500;
+  text-align: left;
+}

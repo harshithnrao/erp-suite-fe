@@ -1,0 +1,52 @@
+{
+    "notifications": [
+      {
+        "id": 1,
+        "title": "New Leave Request",
+        "message": "John Doe has requested leave for 3 days.",
+        "timestamp": "10 mins ago",
+        "type": "alert"
+      },
+      {
+        "id": 2,
+        "title": "Invoice Approved",
+        "message": "Invoice #12345 has been approved.",
+        "timestamp": "30 mins ago",
+        "type": "success"
+      },
+      {
+        "id": 3,
+        "title": "Attendance Update",
+        "message": "Daily attendance report generated.",
+        "timestamp": "1 hour ago",
+        "type": "info"
+      }
+    ],
+    "recentActivities": [
+      {
+        "id": 1,
+        "activity": "Employee Added",
+        "description": "Jane Smith added to HRMS.",
+        "timestamp": "Yesterday"
+      },
+      {
+        "id": 2,
+        "activity": "Payroll Processed",
+        "description": "Payroll for January processed successfully.",
+        "timestamp": "2 days ago"
+      },
+      {
+        "id": 3,
+        "activity": "Task Completed",
+        "description": "Annual financial report submitted.",
+        "timestamp": "3 days ago"
+      },
+      {
+        "id": 4,
+        "activity": "Leave Approved",
+        "description": "John Doe’s leave request approved.",
+        "timestamp": "4 days ago"
+      }
+    ]
+  }
+  

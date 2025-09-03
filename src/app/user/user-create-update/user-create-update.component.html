@@ -1,0 +1,122 @@
+<div mat-dialog-title>{{ isCreateMode() ? 'Create' : 'Update' }} User</div>
+<form [formGroup]="form">
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Inventory#</mat-label>
+        <input matInput formControlName="id" type="number">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Farmer#</mat-label>
+        <input matInput formControlName="farmer_id" type="number">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Item#</mat-label>
+        <input matInput formControlName="item_id" type="number">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Weight</mat-label>
+        <input matInput formControlName="weight" type="number">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Item</mat-label>
+        <input matInput formControlName="item_name">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Remaining Weight</mat-label>
+        <input matInput formControlName="remaining_weight" type="number">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Rate</mat-label>
+        <input matInput formControlName="final_rate_per_kg" type="number">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Farmer</mat-label>
+        <input matInput formControlName="farmer_name" >
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" >
+      </mat-form-field>
+    </div>
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div> -->
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Primary Role</mat-label>
+        <input matInput formControlName="primaryRole">
+      </mat-form-field>
+    </div> -->
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Company Code</mat-label>
+        <input matInput formControlName="companyCode">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px" >
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="active">Active</mat-option>
+          <mat-option value="inactive">Inactive</mat-option>
+          <mat-option value="pending">Pending</mat-option>
+          <mat-option value="suspended">Suspended</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px" *ngIf="false">
+      <mat-form-field>
+        <mat-label>App Image Link</mat-label>
+        <input matInput formControlName="appImgLink">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="dp4" formControlName="validFrom" disabled>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp4"></mat-datepicker-toggle>
+        <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="dp5" formControlName="validTill" disabled>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp5"></mat-datepicker-toggle>
+        <mat-datepicker #dp5 disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div> -->
+
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Create
+      User
+    </button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Update
+      User
+    </button>
+  </mat-dialog-actions>
+</form>

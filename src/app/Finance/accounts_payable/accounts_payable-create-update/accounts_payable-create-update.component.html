@@ -1,0 +1,77 @@
+<div mat-dialog-title *ngIf="true">{{ isCreateMode() ? 'Create' : 'Update' }} Vendor Account</div>
+<form [formGroup]="form" *ngIf="true">
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Vendor ID</mat-label>
+        <input matInput formControlName="vendorId">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Vendor Name</mat-label>
+        <input matInput formControlName="vendorName">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Account Number</mat-label>
+        <input matInput formControlName="accountNumber">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Bank Name</mat-label>
+        <input matInput formControlName="bankName">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Account Type</mat-label>
+        <input matInput formControlName="accountType">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>IFSC Code</mat-label>
+        <input matInput formControlName="ifscCode">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Branch</mat-label>
+        <input matInput formControlName="branch">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="dp1" formControlName="validFrom">
+        <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker #dp1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="dp2" formControlName="validTill">
+        <mat-datepicker-toggle matIconSuffix [for]="dp2"></mat-datepicker-toggle>
+        <mat-datepicker #dp2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">
+      Create Vendor Account
+    </button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">
+      Update Vendor Account
+    </button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,76 @@
+{
+    "menu-items": [
+        {
+            "name": "Employees",
+            "routeOrFunction": "/hrms/employee",
+            "icon": "group",
+            "badge": "5",
+            "badgeColor": "#4CAF50",
+            "position": 1,
+            "roles": [
+                "admin",
+                "hr"
+            ]
+        },
+        {
+            "name": "Document",
+            "routeOrFunction": "/hrms/document",
+            "icon": "description",
+            "badge": "3",
+            "badgeColor": "#FF9800",
+            "position": 2,
+            "roles": [
+                "admin",
+                "manager"
+            ]
+        },
+        {
+            "name": "Department",
+            "routeOrFunction": "/hrms/department",
+            "icon": "corporate_fare",
+            "badge": "3",
+            "badgeColor": "#FF9800",
+            "position": 2,
+            "roles": [
+                "admin",
+                "manager"
+            ]
+        },
+        {
+            "name": "Attendance",
+            "routeOrFunction": "/hrms/attendance",
+            "icon": "schedule",
+            "badge": "10",
+            "badgeColor": "#2196F3",
+            "position": 3,
+            "roles": [
+                "admin",
+                "hr"
+            ]
+        },
+        {
+            "name": "Payroll",
+            "routeOrFunction": "/hrms/payroll",
+            "icon": "monetization_on",
+            "badge": "2",
+            "badgeColor": "#F44336",
+            "position": 4,
+            "roles": [
+                "admin",
+                "finance"
+            ]
+        },
+        {
+            "name": "Leaves",
+            "routeOrFunction": "/hrms/leaves",
+            "icon": "event",
+            "badge": "1",
+            "badgeColor": "#9C27B0",
+            "position": 5,
+            "roles": [
+                "admin",
+                "hr"
+            ]
+        }
+    ]
+}

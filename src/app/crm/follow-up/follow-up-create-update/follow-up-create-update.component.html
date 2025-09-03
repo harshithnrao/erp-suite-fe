@@ -1,0 +1,122 @@
+<div mat-dialog-title *ngIf="true">{{ isCreateMode() ? 'Create' : 'Update' }} Lead Follow-Up</div>
+<form [formGroup]="form" *ngIf="true">
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Lead Name</mat-label>
+        <input matInput formControlName="leadName">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Visited By</mat-label>
+        <input matInput formControlName="visitedBy">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Visited To</mat-label>
+        <input matInput formControlName="visitedTo">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Visit Date</mat-label>
+        <input matInput [matDatepicker]="visitDatePicker" formControlName="visitDate">
+        <mat-datepicker-toggle matIconSuffix [for]="visitDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #visitDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Reason for Visit</mat-label>
+        <input matInput formControlName="reasonForVisit">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Next Follow-Up</mat-label>
+        <input matInput [matDatepicker]="nextFollowUpPicker" formControlName="nextFollowUp">
+        <mat-datepicker-toggle matIconSuffix [for]="nextFollowUpPicker"></mat-datepicker-toggle>
+        <mat-datepicker #nextFollowUpPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="validFromPicker" formControlName="validFrom">
+        <mat-datepicker-toggle matIconSuffix [for]="validFromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #validFromPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="validTillPicker" formControlName="validTill">
+        <mat-datepicker-toggle matIconSuffix [for]="validTillPicker"></mat-datepicker-toggle>
+        <mat-datepicker #validTillPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Created At</mat-label>
+        <input matInput formControlName="createdAt" [readonly]="true">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Updated At</mat-label>
+        <input matInput formControlName="updatedAt" [readonly]="true">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Deleted At</mat-label>
+        <input matInput formControlName="deletedAt" [readonly]="true">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Created By</mat-label>
+        <input matInput formControlName="createdBy" [readonly]="true">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Modified By</mat-label>
+        <input matInput formControlName="modifiedBy" [readonly]="true">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Version</mat-label>
+        <input matInput formControlName="version" [readonly]="true">
+      </mat-form-field>
+    </div> -->
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Lead ID</mat-label>
+        <input matInput formControlName="leadId" >
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Create Follow-Up</button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Update Follow-Up</button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,579 @@
+{
+  "appConfig": {
+    "themeConfig": {
+      "theme": "fury-light",
+      "themePosition": "static",
+      "navigation": "all",
+      "sidenavUserVisible": false,
+      "toolbarVisible": true,
+      "toolbarPosition": "above-fixed",
+      "footerVisible": false,
+      "footerPosition": "fixed",
+      "showLayoutConfig": false,
+      "showConfigPanel": false,
+      "showSearchBar": false
+    }
+  },
+  "permissions":{
+    "Admin": {
+      "Categories": ["Create", "Read", "Update", "Delete"],
+      "Customers": ["Create", "Read", "Update"],
+      "Distribution Centers": ["Create", "Read", "Update", "Delete"],
+      "Items": ["Create", "Read", "Update", "Delete"],
+      "Logistics": ["Create", "Read", "Update", "Delete"],
+      "Purchase Orders": ["Create", "Read", "Update", "Delete"],
+      "Vendors": ["Create", "Read", "Update"],
+      "Service Orders": ["Create", "Read", "Update"],
+      "Rate Sheet": ["Create", "Read", "Update", "Delete"],
+      "Zones": ["Create", "Read", "Update", "Delete"],
+      "Leads": ["Create", "Read", "Update"],
+      "Logs": ["Create", "Read", "Update"],
+      "Contracts": ["Create", "Read", "Update"],
+      "Proposals": ["Create", "Read", "Update"],
+      "Feedbacks": ["Create", "Read", "Update"],
+      "Follow-Up": ["Create", "Read", "Update"],
+      "Accounts Payable": ["Create", "Read", "Update"],
+      "Accounts Receivable": ["Create", "Read", "Update"],
+      "General Ledger": ["Create", "Read", "Update"],
+      "Orders": ["Create", "Read", "Update", "Delete"],
+      "Invoice": ["Create", "Read", "Update", "Delete"],
+      "Audit Schedule": ["Create", "Read", "Update", "Delete"],
+      "AP SO Transactions": ["Create", "Read", "Update"],
+      "AP PO Transactions": ["Create", "Read", "Update"],
+      "AR Transactions": ["Create", "Read", "Update"],
+      "Employees": ["Create", "Read", "Update","Delete"],
+      "Department": ["Create", "Read", "Update"],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Create", "Read", "Update"],
+      "Leaves": ["Create", "Read", "Update"],
+      "Document": ["Create", "Read", "Update","Open"],
+      "#":["Read"]
+    },
+    "Sales": {
+      "Categories": ["Read"],
+      "Customers": ["Create", "Read", "Update"],
+      "Distribution Centers": ["Create", "Read"],
+      "Items": ["Read"],
+      "Logistics": ["Create", "Read"],
+      "Purchase Orders": ["Create", "Read", "Update"],
+      "Vendors": ["Read"],
+      "Service Orders": ["Read"],
+      "Rate Sheet": ["Create", "Read"],
+      "Zones": ["Create", "Read"],
+      "Leads": ["Create", "Read"],
+      "Logs": ["Create", "Read"],
+      "Contracts": ["Create", "Read"],
+      "Proposals": ["Create", "Read"],
+      "Feedbacks": ["Read"],
+      "Follow-Up": ["Create", "Read"],
+      "Accounts Payable": ["Read"],
+      "Accounts Receivable": ["Create", "Read", "Update"],
+      "General Ledger": ["Create", "Read", "Update"],
+      "Orders": ["Create", "Read", "Update"],
+      "Invoice": ["Create", "Read", "Update"],
+      "Audit Schedule": ["Read"],
+      "AP SO Transactions": ["Read"],
+      "AP PO Transactions": ["Read"],
+      "AR Transactions": ["Create", "Read", "Update"],
+      "Employees": ["Read"],
+      "Department": ["Read"],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Read"],
+      "Leaves": ["Create", "Read"],
+      "#":["Read"]
+    },
+    "Finance": {
+      "Categories": [],
+      "Customers": ["Read"],
+      "Distribution Centers": [],
+      "Items": [],
+      "Logistics": [],
+      "Purchase Orders": ["Create", "Read", "Update"],
+      "Vendors": ["Read"],
+      "Service Orders": ["Create", "Read", "Update"],
+      "Rate Sheet": ["Create", "Read"],
+      "Zones": [],
+      "Leads": [],
+      "Logs": [],
+      "Contracts": ["Create", "Read", "Update"],
+      "Proposals": ["Create", "Read", "Update"],
+      "Feedbacks": [],
+      "Follow-Up": [],
+      "Accounts Payable": ["Create", "Read", "Update"],
+      "Accounts Receivable": ["Create", "Read", "Update"],
+      "General Ledger": ["Create", "Read", "Update"],
+      "Orders": ["Read"],
+      "Invoice": ["Create", "Read", "Update"],
+      "Audit Schedule": ["Create", "Read"],
+      "AP SO Transactions": ["Create", "Read", "Update"],
+      "AP PO Transactions": ["Create", "Read", "Update"],
+      "AR Transactions": ["Create", "Read", "Update"],
+      "Employees": ["Read"],
+      "Department": [],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Create", "Read"],
+      "Leaves": ["Create", "Read"]
+    },
+    "HR": {
+      "Categories": ["Read"],
+      "Customers": ["Read"],
+      "Distribution Centers": ["Read"],
+      "Items": ["Read"],
+      "Logistics": [],
+      "Purchase Orders": [],
+      "Vendors": ["Read"],
+      "Service Orders": [],
+      "Rate Sheet": [],
+      "Zones": ["Read"],
+      "Leads": [],
+      "Logs": [],
+      "Contracts": [],
+      "Proposals": [],
+      "Feedbacks": [],
+      "Follow-Up": [],
+      "Accounts Payable": [],
+      "Accounts Receivable": [],
+      "General Ledger": [],
+      "Orders": [],
+      "Invoice": [],
+      "Audit Schedule": [],
+      "AP SO Transactions": [],
+      "AP PO Transactions": [],
+      "AR Transactions": [],
+      "Employees": ["Create", "Read", "Update"],
+      "Department": ["Create", "Read", "Update"],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Create", "Read"],
+      "Leaves": ["Create", "Read"]
+    },
+    "Purchase": {
+      "Categories": ["Create", "Read", "Update"],
+      "Customers": ["Read"],
+      "Distribution Centers": ["Create", "Read"],
+      "Items": ["Create", "Read", "Update"],
+      "Logistics": ["Create", "Read"],
+      "Purchase Orders": ["Create", "Read", "Update"],
+      "Vendors": ["Create", "Read"],
+      "Service Orders": ["Create", "Read", "Update"],
+      "Rate Sheet": ["Create", "Read"],
+      "Zones": ["Create", "Read"],
+      "Leads": ["Create", "Read"],
+      "Logs": ["Create", "Read"],
+      "Contracts": ["Create", "Read"],
+      "Proposals": ["Create", "Read"],
+      "Feedbacks": ["Read"],
+      "Follow-Up": ["Create", "Read"],
+      "Accounts Payable": ["Read"],
+      "Accounts Receivable": ["Create", "Read"],
+      "General Ledger": ["Create", "Read"],
+      "Orders": ["Create", "Read", "Update"],
+      "Invoice": ["Create", "Read"],
+      "Audit Schedule": [],
+      "AP SO Transactions": ["Create", "Read"],
+      "AP PO Transactions": ["Create", "Read"],
+      "AR Transactions": ["Create", "Read"],
+      "Employees": ["Read"],
+      "Department": ["Read"],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Read"],
+      "Leaves": ["Create", "Read"]
+    },
+    "Operations": {
+      "Categories": ["Create", "Read", "Update"],
+      "Customers": ["Read"],
+      "Distribution Centers": ["Create", "Read"],
+      "Items": ["Create", "Read", "Update"],
+      "Logistics": ["Create", "Read", "Update"],
+      "Purchase Orders": ["Create", "Read", "Update"],
+      "Vendors": ["Read"],
+      "Service Orders": ["Create", "Read", "Update"],
+      "Rate Sheet": ["Create", "Read"],
+      "Zones": ["Create", "Read"],
+      "Leads": ["Create", "Read"],
+      "Logs": ["Create", "Read"],
+      "Contracts": ["Create", "Read"],
+      "Proposals": ["Create", "Read"],
+      "Feedbacks": ["Read"],
+      "Follow-Up": ["Create", "Read"],
+      "Accounts Payable": ["Read"],
+      "Accounts Receivable": ["Create", "Read"],
+      "General Ledger": ["Create", "Read"],
+      "Orders": ["Create", "Read", "Update"],
+      "Invoice": ["Create", "Read"],
+      "Audit Schedule": [],
+      "AP SO Transactions": ["Create", "Read"],
+      "AP PO Transactions": ["Create", "Read"],
+      "AR Transactions": ["Create", "Read"],
+      "Employees": ["Read"],
+      "Department": ["Read"],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Read"],
+      "Leaves": ["Create", "Read"]
+    },
+    "Support": {
+      "Categories": ["Read", "Update"],
+      "Customers": ["Read"],
+      "Distribution Centers": ["Read"],
+      "Items": ["Read"],
+      "Logistics": ["Read"],
+      "Purchase Orders": ["Create", "Read", "Update"],
+      "Vendors": ["Read"],
+      "Service Orders": ["Read"],
+      "Rate Sheet": ["Read"],
+      "Zones": ["Read"],
+      "Leads": ["Read"],
+      "Logs": [],
+      "Contracts": ["Read"],
+      "Proposals": ["Read"],
+      "Feedbacks": [],
+      "Follow-Up": [],
+      "Accounts Payable": [],
+      "Accounts Receivable": [],
+      "General Ledger": [],
+      "Orders": ["Read"],
+      "Invoice": ["Read"],
+      "Audit Schedule": [],
+      "AP SO Transactions": [],
+      "AP PO Transactions": [],
+      "AR Transactions": [],
+      "Employees": ["Read"],
+      "Department": ["Read"],
+      "Attendance": ["Read"],
+      "Payroll": ["Read"],
+      "Leaves": ["Read"]
+    },
+    "Inventory": {
+      "Categories": ["Create", "Read", "Update"],
+      "Customers": ["Read"],
+      "Distribution Centers": ["Create", "Read"],
+      "Items": ["Create", "Read", "Update"],
+      "Logistics": ["Create", "Read"],
+      "Purchase Orders": ["Create", "Read", "Update"],
+      "Vendors": ["Create", "Read"],
+      "Service Orders": ["Create", "Read"],
+      "Rate Sheet": ["Create", "Read"],
+      "Zones": ["Create", "Read"],
+      "Leads": ["Create", "Read"],
+      "Logs": ["Create", "Read"],
+      "Contracts": ["Create", "Read"],
+      "Proposals": ["Create", "Read"],
+      "Feedbacks": ["Read"],
+      "Follow-Up": ["Create", "Read"],
+      "Accounts Payable": ["Read"],
+      "Accounts Receivable": ["Create", "Read"],
+      "General Ledger": ["Create", "Read"],
+      "Orders": ["Create", "Read", "Update"],
+      "Invoice": ["Create", "Read"],
+      "Audit Schedule": [],
+      "AP SO Transactions": ["Create", "Read"],
+      "AP PO Transactions": ["Create", "Read"],
+      "AR Transactions": ["Create", "Read"],
+      "Employees": ["Read"],
+      "Department": ["Read"],
+      "Attendance": ["Create", "Read"],
+      "Payroll": ["Read"],
+      "Leaves": ["Create", "Read"]
+    },
+    "Audit": {
+      "Categories": [],
+      "Customers": [],
+      "Distribution Centers": [],
+      "Items": [],
+      "Logistics": [],
+      "Purchase Orders": [],
+      "Vendors": [],
+      "Service Orders": [],
+      "Rate Sheet": [],
+      "Zones": [],
+      "Leads": [],
+      "Logs": [],
+      "Contracts": [],
+      "Proposals": [],
+      "Feedbacks": [],
+      "Follow-Up": [],
+      "Accounts Payable": [],
+      "Accounts Receivable": [],
+      "General Ledger": [],
+      "Orders": [],
+      "Invoice": [],
+      "Audit Schedule": ["Create", "Read", "Update", "Delete"],
+      "AP SO Transactions": [],
+      "AP PO Transactions": [],
+      "AR Transactions": [],
+      "Employees": [],
+      "Department": [],
+      "Attendance": [],
+      "Payroll": [],
+      "Leaves": []
+    },
+    "Technical": {
+      "Categories": [],
+      "Customers": [],
+      "Distribution Centers": [],
+      "Items": [],
+      "Logistics": [],
+      "Purchase Orders": [],
+      "Vendors": [],
+      "Service Orders": [], 
+      "Rate Sheet": [],
+      "Zones": [],
+      "Leads": [],
+      "Logs": [],
+      "Contracts": [],
+      "Proposals": [],
+      "Feedbacks": [],
+      "Follow-Up": [],
+      "Accounts Payable": [],
+      "Accounts Receivable": [],
+      "General Ledger": [],
+      "Orders": [],
+      "Invoice": [],
+      "Audit Schedule": ["Create", "Read", "Update", "Delete"],
+      "AP SO Transactions": [],
+      "AP PO Transactions": [],
+      "AR Transactions": [],
+      "Employees": [],
+      "Department": [],
+      "Attendance": [],
+      "Payroll": [],
+      "Leaves": []
+    }
+  },
+  "navConfig": [
+    {
+      "name": "APPS",
+      "position": 5,
+      "type": "subheading",
+      "customClass": "first-subheading",
+      "roles": [
+        "admin",
+        "staff"
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "routeOrFunction": "/",
+      "icon": "dashboard",
+      "position": 10,
+      "pathMatchExact": true,
+      "roles": [
+        "all"
+      ]
+    },
+    {
+      "name": "Orders",
+      "routeOrFunction": "/quotes",
+      "icon": "assignment",
+      "badge": "22",
+      "badgeColor": "#2196F3",
+      "position": 15,
+      "roles": [
+        
+        "all"
+      ]
+    },
+    {
+      "name": "Inventory",
+      "routeOrFunction": "/users",
+      "icon": "description",
+      "badge": "22",
+      "badgeColor": "#2196F3",
+      "position": 15,
+      "roles": [
+        "",
+        "buyer"
+      ]
+    },
+    {
+      "name": "Rate Sheet",
+      "routeOrFunction": "/rates",
+      "icon": "description",
+      "badge": "22",
+      "badgeColor": "#2196F3",
+      "position": 15,
+      "roles": [
+        "farmer",
+        "buyer"
+      ]
+    },
+    {
+      "name": "Users",
+      "routeOrFunction": "/companies",
+      "icon": "view_compact",
+      "badge": "22",
+      "badgeColor": "#2196F3",
+      "position": 15,
+      "roles": ["farmer","buyer"]
+    },
+    {
+      "name": "Calendar",
+      "routeOrFunction": "/apps/calendar",
+      "icon": "date_range",
+      "position": 20,
+      "roles": []
+    },
+    {
+      "name": "Inbox",
+      "routeOrFunction": "/apps/inbox",
+      "icon": "inbox",
+      "position": 25,
+      "roles": []
+    },
+    {
+      "name": "Chat",
+      "routeOrFunction": "/apps/chat",
+      "icon": "chat",
+      "position": 30,
+      "badge": "14",
+      "badgeColor": "#009688",
+      "roles": []
+    },
+    {
+      "name": "USER INTERFACE",
+      "type": "subheading",
+      "position": 35,
+      "roles": []
+    },
+    {
+      "name": "Components",
+      "routeOrFunction": "/components",
+      "icon": "layers",
+      "position": 40
+    },
+    {
+      "name": "Forms",
+      "icon": "description",
+      "position": 45,
+      "subItems": [
+        {
+          "name": "Form Elements",
+          "routeOrFunction": "/forms/form-elements",
+          "position": 10
+        },
+        {
+          "name": "Form Wizard",
+          "routeOrFunction": "/forms/form-wizard",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "name": "Drag & Drop",
+      "routeOrFunction": "/drag-and-drop",
+      "icon": "mouse",
+      "position": 55
+    },
+    {
+      "name": "WYSIWYG Editor",
+      "routeOrFunction": "/editor",
+      "icon": "format_shapes",
+      "position": 60,
+      "roles": []
+    },
+    {
+      "name": "PAGES",
+      "type": "subheading",
+      "position": 65
+    },
+    {
+      "name": "Authentication",
+      "icon": "lock",
+      "position": 66,
+      "subItems": [
+        {
+          "name": "Login Page",
+          "routeOrFunction": "/login",
+          "position": 5
+        },
+        {
+          "name": "Register Page",
+          "routeOrFunction": "/register",
+          "position": 10
+        },
+        {
+          "name": "Forgot Password",
+          "routeOrFunction": "/forgot-password",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "name": "Page Layouts",
+      "icon": "view_compact",
+      "position": 67,
+      "subItems": [
+        {
+          "name": "Simple",
+          "routeOrFunction": "/page-layouts/simple",
+          "position": 5
+        },
+        {
+          "name": "Simple Tabbed",
+          "routeOrFunction": "/page-layouts/simple-tabbed",
+          "position": 5
+        },
+        {
+          "name": "Card",
+          "routeOrFunction": "/page-layouts/card",
+          "position": 10
+        },
+        {
+          "name": "Card Tabbed",
+          "routeOrFunction": "/page-layouts/card-tabbed",
+          "position": 15
+        }
+      ],
+      "badge": "4",
+      "badgeColor": "#4CAF50"
+    },
+    {
+      "name": "Coming Soon",
+      "routeOrFunction": "/coming-soon",
+      "icon": "watch_later",
+      "position": 68
+    },
+    {
+      "name": "Blank",
+      "routeOrFunction": "/blank",
+      "icon": "picture_in_picture",
+      "position": 69
+    },
+    {
+      "name": "Material Icons",
+      "routeOrFunction": "/icons",
+      "icon": "grade",
+      "position": 75
+    },
+    {
+      "name": "Multi-Level Menu",
+      "icon": "menu",
+      "position": 85,
+      "subItems": [
+        {
+          "name": "Level 1",
+          "subItems": [
+            {
+              "name": "Level 2",
+              "subItems": [
+                {
+                  "name": "Level 3",
+                  "subItems": [
+                    {
+                      "name": "Level 4",
+                      "subItems": [
+                        {
+                          "name": "Level 5",
+                          "routeOrFunction": "/level1/level2/level3/level4/level5"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

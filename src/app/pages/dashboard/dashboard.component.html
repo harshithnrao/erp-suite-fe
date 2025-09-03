@@ -1,0 +1,49 @@
+<fury-page-layout mode="card" >
+  <fury-page-layout-header class="header-with-bg">
+    <!-- Header content -->
+  </fury-page-layout-header>
+
+  <fury-page-layout-content>
+    <div class="button-grid">
+      <div *ngFor="let item of menuItems" class="button-wrapper">
+        <a [routerLink]="item.routeOrFunction" class="button-link">
+          <button mat-button class="icon-button" matTooltip="{{ item.name }}">
+            <div class="icon-wrapper">
+              <mat-icon class="icon animated-icon">{{ item.icon }}</mat-icon>
+            </div>
+            <div class="button-label animated-label">{{ item.name }}</div>
+          </button>
+        </a>
+      </div>
+    </div>
+  </fury-page-layout-content>
+
+  <!-- <div class="dashboard-container">
+    <div class="notifications-section">
+      <h3>Notifications</h3>
+      <ul>
+        <li *ngFor="let notification of notifications">
+          <div class="notification-card" [ngClass]="notification.type">
+            <h4>{{ notification.title }}</h4>
+            <p>{{ notification.message }}</p>
+            <small>{{ notification.timestamp }}</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="activities-section">
+      <h3>Recent Activities</h3>
+      <ul>
+        <li *ngFor="let activity of recentActivities">
+          <div class="activity-card">
+            <h4>{{ activity.activity }}</h4>
+            <p>{{ activity.description }}</p>
+            <small>{{ activity.timestamp }}</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  
+</fury-page-layout>

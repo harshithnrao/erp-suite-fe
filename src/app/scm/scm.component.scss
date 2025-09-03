@@ -1,0 +1,107 @@
+@import "var";
+
+.header-with-bg {
+  background-image: url('/assets/scm/scm-banner.jpg');
+  background-size: cover;
+  background-position: center -95px;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  text-align: center;
+  color: #ffffff;
+
+  .header-content {
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .page-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #f0f0f0;
+  }
+}
+
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 12px;
+  padding: 20px;
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+
+    .button-link {
+      text-decoration: none;
+      width: 90%;
+
+      .icon-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 125px;
+        width: 125px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #e6e6e6, #ffffff);
+        box-shadow: 4px 4px 8px #d1d1d1, -4px -4px 8px #ffffff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+          background: linear-gradient(145deg, #ffffff, #e6e6e6);
+          transform: scale(1.05);
+          box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+        }
+
+        .icon-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 60px;
+          width: 60px;
+          border-radius: 50%; /* Rounded icon wrapper */
+          background-color: #5fb1bf; /* Primary color for icon background */
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          margin-bottom: 8px;
+
+          .icon {
+            font-size: 24px;
+            color: #ffffff;
+            transition: transform 0.3s ease, color 0.3s ease;
+          }
+
+          &:hover .icon {
+            transform: rotate(360deg); /* Rotate the icon on hover */
+            color: #f0f0f0;
+          }
+        }
+
+        .button-label {
+          font-size: 12px;
+          font-weight: 500;
+          color: #333333;
+          //text-transform: capitalize;
+          transition: transform 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            transform: translateY(-5px); /* Slight upward motion on hover */
+            color: #007bff; /* Change text color on hover */
+          }
+        }
+      }
+    }
+  }
+}

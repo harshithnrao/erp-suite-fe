@@ -1,0 +1,77 @@
+<fury-page-layout mode="card">
+    <fury-page-layout-header class="header-with-bg">
+        <fury-breadcrumbs [@fadeInRight] [crumbs]="[]" current="Finance"></fury-breadcrumbs>
+    </fury-page-layout-header>
+
+    <fury-page-layout-content [@fadeInUp]>
+        <div class="button-grid">
+            <div *ngFor="let item of menuItems" class="button-wrapper">
+                <a [routerLink]="item.routeOrFunction" class="button-link">
+                    <button mat-button class="icon-button" matTooltip="{{ item.name }}">
+                        <div class="icon-wrapper">
+                            <mat-icon class="icon animated-icon">{{ item.icon }}</mat-icon>
+                        </div>
+                        <div class="button-label animated-label">{{ item.name }}</div>
+                    </button>
+                </a>
+            </div>
+        </div>  
+        
+
+        <fury-page>
+            <div fxFlex="noshrink" fxLayout="column" [fxLayoutGap]="gap" fxLayout.gt-lg="row">
+
+                <fury-advanced-pie-chart-widget class="route-animations-elements" [data]="advancedPieChartData$ | async"
+                    [options]="advancedPieChartOptions">
+                </fury-advanced-pie-chart-widget>
+                <div fxLayout="column" [fxLayoutGap]="gap" [fxFlex]="col(2)" fxLayout.gt-sm="row">
+
+                    <div fxFlex="auto" [fxFlex.gt-sm]="col(4)">
+                        <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+
+                            <fury-donut-chart-widget [data]="topCategoriesData$ | async"
+                                [options]="topCategoriesOptions"
+                                class="route-animations-elements">
+                            </fury-donut-chart-widget>
+                            <fury-audience-overview-widget class="route-animations-elements"
+                                [data]="audienceOverviewDebit$"
+                                [options]="audienceOverviewOptionsDebit">
+                            </fury-audience-overview-widget>
+                            <fury-sales-summary-widget [data]="salesSummaryData$ | async"
+                                [options]="salesSummaryOptions" [summaryData]="salesSummary"
+                                class="fullheight">
+                            </fury-sales-summary-widget>
+                            <fury-quick-info-widget color="black" icon="attach_money"
+                                value="{{totalTaxCount?.totalTaxAmount || 0}}"
+                                label="{{totalTaxCount?.description || 'Total Tax'}}" [background]="'#5fb1bf'">
+                            </fury-quick-info-widget>
+                        </div>
+                    </div>
+                    <div fxFlex="auto" [fxFlex.gt-sm]="col(4)">
+                        <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+
+                            <fury-audience-overview-widget class="route-animations-elements"
+                                [data]="audienceOverviewCredit$"
+                                [options]="audienceOverviewOptionsCredit">
+                            </fury-audience-overview-widget>
+                            <fury-donut-chart-widget [data]="top5CategoriesData$ | async"
+                                [options]="top5CategoriesOptions"
+                                class="route-animations-elements">
+                            </fury-donut-chart-widget>
+                            <fury-sales-summary-widget [data]="salesSummaryData$ | async"
+                                [options]="salesSummaryOptions2" [summaryData]="salesSummary2"
+                                class="fullheight">
+                            </fury-sales-summary-widget>
+                            <fury-quick-info-widget color="black" icon="history" value="{{auditLogCount || 0}}"
+                                label="Audit Logs" [background]="'#EF7B45'">
+                            </fury-quick-info-widget>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fury-page>
+
+
+
+    </fury-page-layout-content>
+</fury-page-layout>

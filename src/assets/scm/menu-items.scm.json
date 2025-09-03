@@ -1,0 +1,125 @@
+{
+    "menu-items": [
+        {
+            "name": "Categories",
+            "routeOrFunction": "/scm/category",
+            "icon": "category",
+            "badge": "0",
+            "badgeColor": "#4CAF50",
+            "position": 1,
+            "roles": [
+                "admin",
+                "Inventory Manager",
+                "Purchasing",
+                "Product Management"
+            ]
+        },
+        {
+            "name": "Distribution Centers",
+            "routeOrFunction": "/scm/distribution-center",
+            "icon": "store",
+            "badge": "0",
+            "badgeColor": "#2196F3",
+            "position": 3,
+            "roles": [
+                "admin",
+                "Operations Manager",
+                "Inventory Manager"
+            ]
+        },
+        {
+            "name": "Items",
+            "routeOrFunction": "/scm/item",
+            "icon": "inventory",
+            "badge": "0",
+            "badgeColor": "#F44336",
+            "position": 4,
+            "roles": [
+                "admin",
+                "Purchasing",
+                "Inventory Manager",
+                "Operations Manager",
+                "Product Management"
+            ]
+        },
+        {
+            "name": "Logistics",
+            "routeOrFunction": "/scm/logistics",
+            "icon": "local_shipping",
+            "badge": "0",
+            "badgeColor": "#9C27B0",
+            "position": 5,
+            "roles": [
+                "admin",
+                "Operations Manager",
+                "Inventory Manager",
+                "Purchasing"
+            ]
+        },
+        {
+            "name": "Purchase Orders",
+            "routeOrFunction": "/scm/po",
+            "icon": "shopping_cart",
+            "badge": "0",
+            "badgeColor": "#00BCD4",
+            "position": 6,
+            "roles": [
+                "admin",
+                "Purchasing",
+                "Operations Manager"
+            ]
+        },
+        {
+            "name": "Vendors",
+            "routeOrFunction": "/scm/vendor",
+            "icon": "business_center",
+            "badge": "0",
+            "badgeColor": "#FF5722",
+            "position": 7,
+            "roles": [
+                "admin",
+                "Purchasing",
+                "Product Management"
+            ]
+        },
+        {
+            "name": "Service Orders",
+            "routeOrFunction": "/scm/so",
+            "icon": "build_circle",
+            "badge": "0",
+            "badgeColor": "#E91E63",
+            "position": 8,
+            "roles": [
+                "admin",
+                "Operations Manager",
+                "Customer Support"
+            ]
+        },
+        {
+            "name": "Rate Sheet",
+            "routeOrFunction": "/scm/ratesheet",
+            "icon": "attach_money",
+            "badge": "0",
+            "badgeColor": "#8BC34A",
+            "position": 9,
+            "roles": [
+                "admin",
+                "Purchasing",
+                "Product Management"
+            ]
+        },
+        {
+            "name": "Zones",
+            "routeOrFunction": "/scm/zone",
+            "icon": "map",
+            "badge": "0",
+            "badgeColor": "#607D8B",
+            "position": 10,
+            "roles": [
+                "admin",
+                "Purchasing",
+                "Operations Manager"
+            ]
+        }
+    ]
+}

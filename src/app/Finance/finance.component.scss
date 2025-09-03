@@ -1,0 +1,108 @@
+@import "var";
+
+.clickable {
+    cursor: pointer;
+}
+.header-with-bg {
+    background-image: url('/assets/finance/finance-seo-page-banner.png');
+    background-size: cover;
+    background-position: center -190px;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+
+    .header-content {
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .page-title {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .subtitle {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 10px;
+        color: #f0f0f0;
+    }
+}
+
+.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px; /* Adjusted for compact layout */
+    padding: 20px;
+
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 110px; /* Slightly increased for better fit */
+
+        .button-link {
+            text-decoration: none;
+            width: 100%;
+
+            .icon-button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100px;
+                width: 100px;
+                border: none;
+                border-radius: 12px;
+                background: linear-gradient(145deg, #f7f7f7, #e3e3e3);
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.7);
+                transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+                cursor: pointer;
+                overflow: hidden;
+
+                &:hover {
+                    background: linear-gradient(145deg, #ffffff, #e8e8e8);
+                    transform: scale(1.05);
+                    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15), -6px -6px 12px rgba(255, 255, 255, 0.9);
+                }
+
+                .icon-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 8px;
+                    background-color: #5fb1bf;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 8px;
+
+                    .icon {
+                        font-size: 20px;
+                        color: #ffffff;
+                        transition: transform 0.3s ease, color 0.3s ease;
+                    }
+                }
+
+                .button-label {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #333333;
+                    text-align: center; /* Ensure label text is centered */
+                    line-height: 1.2; /* Adjust line height for better spacing */
+                    word-wrap: break-word;
+                    max-width: 90%; /* Prevent overflow */
+                    transition: transform 0.3s ease, color 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        color: #1976d2;
+                    }
+                }
+            }
+        }
+    }
+}

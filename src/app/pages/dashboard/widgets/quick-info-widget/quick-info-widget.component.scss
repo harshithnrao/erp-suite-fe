@@ -1,0 +1,58 @@
+@import "var";
+
+.quick-info-widget {
+  background: white;
+  padding: $spacing;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -4px 8px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 -6px 12px rgba(255, 255, 255, 0.5);
+  }
+
+  .info-content {
+    transition: color 0.3s ease;
+
+    .value {
+      font: var(--font-display-1);
+      font-weight: bold;
+      color: #333333; // Fallback dark color
+      margin-bottom: 5px;
+    }
+
+    .label {
+      font: var(--font-body-1);
+      color: #666666; // Adjusted for readability
+    }
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #99d9ea; // Lightened primary color
+    }
+
+    .icon {
+      font-size: 24px;
+      color: #333333; // Fallback dark color for icon
+      transition: transform 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        transform: rotate(360deg); /* Full rotation animation */
+        color: #5fb1bf; // Adjusted hover color
+      }
+    }
+  }
+}

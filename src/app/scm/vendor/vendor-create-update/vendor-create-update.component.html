@@ -1,0 +1,57 @@
+<div mat-dialog-title *ngIf="true">{{ isCreateMode() ? 'Create' : 'Update' }} Vendor</div>
+
+<form [formGroup]="form" *ngIf="true">
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" [disabled]="isUpdateMode()">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Point of Contact</mat-label>
+        <input matInput formControlName="pointOfContact">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Contact Info</mat-label>
+        <input matInput formControlName="contactInfo">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput formControlName="location">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="dp1" formControlName="validFrom" [disabled]="isUpdateMode()">
+        <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker #dp1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="dp2" formControlName="validTill">
+        <mat-datepicker-toggle matIconSuffix [for]="dp2"></mat-datepicker-toggle>
+        <mat-datepicker #dp2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Create Vendor</button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Update Vendor</button>
+  </mat-dialog-actions>
+</form>

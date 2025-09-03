@@ -1,0 +1,52 @@
+<div class="page background-pattern" fxLayout="column" fxLayoutAlign="center center">
+  <div [@fadeInUp] class="card login-card">
+    <div class="header padding background-primary" fxLayout="row" fxLayoutAlign="center center">
+      <div class="logo-container">
+        <img src="/assets/img/icon.png" alt="LaunchERP Logo" class="logo">
+      </div>
+      <div class="app-name">
+        LaunchERP
+      </div>
+    </div>
+    
+    <div class="padding" fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
+      <div class="login-header">
+        Log in to your LaunchERP Account
+      </div>      
+      <div fxFlex="auto" fxLayout="column">
+        <label class="label-name">
+          <strong>Email</strong>
+        </label>
+        <mat-form-field fxFlex="grow">
+          <input matInput required formControlName="email" class="form-control" placeholder="Enter your email">
+          <mat-error *ngIf="form.get('email').hasError('required')">Email address is required</mat-error>
+        </mat-form-field>
+
+        <label class="label-name">
+          <strong>Password</strong>
+        </label>
+        <mat-form-field fxFlex="grow">
+          <input matInput [type]="inputType" formControlName="password" required placeholder="Enter password">
+          <button type="button" mat-icon-button matSuffix (click)="toggleVisibility()" matTooltip="Toggle Visibility">
+            <mat-icon *ngIf="visible">visibility</mat-icon>
+            <mat-icon *ngIf="!visible">visibility_off</mat-icon>
+          </button>
+          <mat-hint>Click the eye to toggle visibility</mat-hint>
+          <mat-error *ngIf="form.get('password').hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="false">
+        <mat-checkbox class="caption">Remember Me</mat-checkbox>
+        <a class="caption" [routerLink]="['/forgot-password']">Forgot Password?</a>
+      </div>
+      <button type="button" color="primary" mat-raised-button (click)="send()">
+        SIGN IN
+      </button>
+      <p class="secondary-text text-center" *ngIf="false">
+        Don't have an account?<br />
+        <a [routerLink]="['/register']">Click here to create one</a>
+      </p>
+    </div>
+  </div>
+</div>

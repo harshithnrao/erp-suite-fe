@@ -1,0 +1,52 @@
+{
+    "menu-items": [
+        {
+            "name": "HRMS",
+            "routeOrFunction": "/hrms",
+            "icon": "supervisor_account",
+            "badge": "5",
+            "badgeColor": "#4CAF50",
+            "position": 1,
+            "roles": [
+                "admin",
+                "hr"
+            ]
+        },
+        {
+            "name": "SCM",
+            "routeOrFunction": "/scm",
+            "icon": "store",
+            "badge": "3",
+            "badgeColor": "#FF9800",
+            "position": 2,
+            "roles": [
+                "admin",
+                "manager"
+            ]
+        },
+        {
+            "name": "CRM",
+            "routeOrFunction": "/crm",
+            "icon": "contact_support",
+            "badge": "10",
+            "badgeColor": "#2196F3",
+            "position": 3,
+            "roles": [
+                "admin",
+                "hr"
+            ]
+        },
+        {
+            "name": "Finance",
+            "routeOrFunction": "/finance",
+            "icon": "payments",
+            "badge": "2",
+            "badgeColor": "#F44336",
+            "position": 4,
+            "roles": [
+                "admin",
+                "finance"
+            ]
+        }
+    ]
+}

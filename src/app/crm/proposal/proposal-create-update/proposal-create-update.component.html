@@ -1,0 +1,95 @@
+<div mat-dialog-title *ngIf="true">
+  {{ isCreateMode() ? 'Create' : 'Update' }} Proposal
+</div>
+
+<form [formGroup]="form" *ngIf="true">
+  <mat-dialog-content>
+    <!-- ID Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" readonly>
+      </mat-form-field>
+    </div>
+
+    <!-- Customer ID Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Customer ID</mat-label>
+        <input matInput formControlName="customerId">
+      </mat-form-field>
+    </div>
+
+    <!-- Proposal Text Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Proposal Text</mat-label>
+        <input matInput formControlName="text">
+      </mat-form-field>
+    </div>
+
+    <!-- Total Amount Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Total Amount</mat-label>
+        <input matInput formControlName="totalAmount" type="number">
+      </mat-form-field>
+    </div>
+
+    <!-- Proposal Date Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Proposal Date</mat-label>
+        <input matInput [matDatepicker]="dp1" formControlName="proposalDate">
+        <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker #dp1></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- Status Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <input matInput formControlName="status">
+      </mat-form-field>
+    </div>
+
+    <!-- Details Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Details</mat-label>
+        <input matInput formControlName="details">
+      </mat-form-field>
+    </div>
+
+    <!-- Valid From Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="dp2" formControlName="validFrom">
+        <mat-datepicker-toggle matIconSuffix [for]="dp2"></mat-datepicker-toggle>
+        <mat-datepicker #dp2></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- Valid Till Field -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="dp3" formControlName="validTill">
+        <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">
+      Create Proposal
+    </button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">
+      Update Proposal
+    </button>
+  </mat-dialog-actions>
+</form>

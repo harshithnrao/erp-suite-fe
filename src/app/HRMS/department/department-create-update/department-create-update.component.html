@@ -1,0 +1,124 @@
+<div mat-dialog-title *ngIf="true">{{ isCreateMode() ? 'Create' : 'Update' }} Department</div>
+<form [formGroup]="form" *ngIf="true">
+  <mat-dialog-content>
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" [readonly]="isUpdateMode()">
+      </mat-form-field>
+    </div> -->
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Department Head</mat-label>
+        <input matInput formControlName="departmentHead">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Established Date</mat-label>
+        <input matInput [matDatepicker]="dp1" formControlName="establishedDate" disabled>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker #dp1 disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Account Head</mat-label>
+        <input matInput formControlName="accountHead">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Active">Active</mat-option>
+          <mat-option value="Inactive">Inactive</mat-option>
+          <!-- <mat-option value="Pending">Pending</mat-option>
+          <mat-option value="Suspended">Suspended</mat-option> -->
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="dp2" formControlName="validFrom">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp2"></mat-datepicker-toggle>
+        <mat-datepicker #dp2></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="dp3" formControlName="validTill">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- If you want to include the 'Created At' and 'Created By' fields but don't want them editable, you can include them as read-only -->
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Created At</mat-label>
+        <input matInput formControlName="createdAt" readonly>
+      </mat-form-field>
+    </div> -->
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Created By</mat-label>
+        <input matInput formControlName="createdBy" readonly>
+      </mat-form-field>
+    </div>
+
+    <!-- Optional 'Modified By', 'Updated At', and 'Deleted At' fields -->
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px" *ngIf="false">
+      <mat-form-field>
+        <mat-label>Modified By</mat-label>
+        <input matInput formControlName="modifiedBy" readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px" *ngIf="false">
+      <mat-form-field>
+        <mat-label>Updated At</mat-label>
+        <input matInput formControlName="updatedAt" readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px" *ngIf="false">
+      <mat-form-field>
+        <mat-label>Deleted At</mat-label>
+        <input matInput formControlName="deletedAt" readonly>
+      </mat-form-field>
+    </div>
+    
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Create Department</button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Update Department</button>
+  </mat-dialog-actions>
+</form>

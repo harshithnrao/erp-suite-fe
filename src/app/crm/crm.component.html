@@ -1,0 +1,65 @@
+<fury-page-layout mode="card">
+    <fury-page-layout-header class="header-with-bg">
+        <fury-breadcrumbs [@fadeInRight] [crumbs]="[]" current="CRM"></fury-breadcrumbs>
+    </fury-page-layout-header>
+
+    <fury-page-layout-content [@fadeInUp]>
+        
+        <div class="button-grid">
+            <div *ngFor="let item of menuItems" class="button-wrapper">
+              <a [routerLink]="item.routeOrFunction" class="button-link">
+                <button mat-button class="icon-button" matTooltip="{{ item.name }}">
+                  <div class="icon-wrapper">
+                    <mat-icon class="icon animated-icon">{{ item.icon }}</mat-icon>
+                  </div>
+                  <div class="button-label animated-label">{{ item.name }}</div>
+                </button>
+              </a>
+            </div>
+          </div>
+          
+        <fury-page>
+            <div fxFlex="noshrink" fxLayout="column" [fxLayoutGap]="gap" fxLayout.gt-lg="row">
+                <div fxLayout="column" [fxLayoutGap]="gap" [fxFlex]="col(2)" fxLayout.gt-sm="row">
+
+                    <div fxFlex="auto" [fxFlex.gt-sm]="col(4)">
+                        <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+
+                            <!-- <fury-audience-overview-widget class="route-animations-elements" [data]="audienceOverview$"
+                                [options]="audienceOverviewOptions"></fury-audience-overview-widget> -->
+                                <fury-donut-chart-widget [data]="reviewsData$ | async"
+                                [options]="reviewsOptions"
+                                class="route-animations-elements"></fury-donut-chart-widget>
+
+                        </div>
+                    </div> 
+                    <div fxFlex="auto" [fxFlex.gt-sm]="col(4)">
+                        <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxFlex="grow" fxLayout="column">
+                            <fury-quick-info-widget color="black" icon="assignment_turned_in"
+                                value="{{contractCount.totalContracts}}" label="{{contractCount.description}}"
+                                [background]="'#5fb1bf'">
+                            </fury-quick-info-widget>
+                            <fury-quick-info-widget color="black" icon="assignment"
+                                value="{{proposalCount.totalProposals}}" label="{{proposalCount.description}}"
+                                [background]="'#ccedf6'">
+                            </fury-quick-info-widget>
+
+                            <!-- <fury-quick-info-widget color="black" icon="leaderboard" value="{{leadCount.totalLeads}}"
+                                label="{{leadCount.description}}" [background]="'#ce9178'">
+                            </fury-quick-info-widget> -->
+
+                            <fury-quick-info-widget color="black" icon="person" value="{{customerCount.totalCustomers}}"
+                                label="{{customerCount.description}}" [background]="'#ee7b44'">
+                            </fury-quick-info-widget>
+                            <div fxLayout="row" [fxLayoutGap]="gap" fxLayout.gt-sm="column"
+                                fxLayoutAlign="start center">
+                                <div [fxFlex.gt-sm]="col(2)" [fxLayoutGap]="gap" fxLayout="row">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fury-page>
+    </fury-page-layout-content>
+</fury-page-layout>

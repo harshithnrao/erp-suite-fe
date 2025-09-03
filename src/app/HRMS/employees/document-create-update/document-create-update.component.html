@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Create Document</h2>
+
+<form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Employee ID</mat-label>
+    <input matInput formControlName="employeeId" type="number" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Document Type</mat-label>
+    <input matInput formControlName="documentType" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Document Number</mat-label>
+    <input matInput formControlName="documentNumber" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Issue Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="issueDate" required />
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Expiry Date</mat-label>
+    <input matInput [matDatepicker]="expiryPicker" formControlName="expiryDate" required />
+    <mat-datepicker #expiryPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valid From</mat-label>
+    <input matInput [matDatepicker]="validFromPicker" formControlName="validFrom" required />
+    <mat-datepicker #validFromPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valid Till</mat-label>
+    <input matInput [matDatepicker]="validTillPicker" formControlName="validTill" required />
+    <mat-datepicker #validTillPicker></mat-datepicker>
+  </mat-form-field>
+
+  <input type="file" (change)="onFileSelect($event)" required />
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button type="submit" [disabled]="!documentForm.valid || !selectedFile">Create Document</button>
+  </div>
+</form>

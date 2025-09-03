@@ -1,0 +1,96 @@
+<div mat-dialog-title *ngIf="true">{{ isCreateMode() ? 'Create' : 'Update' }} Invoice</div>
+
+<div class="container-div">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Details </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="form" *ngIf="true">
+      <mat-dialog-content>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="id">
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Order ID</mat-label>
+            <input matInput formControlName="orderId">
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Order Name</mat-label>
+            <input matInput formControlName="orderName">
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="Pending">Pending</mat-option>
+              <mat-option value="Paid">Paid</mat-option>
+              <mat-option value="Cancelled">Cancelled</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Invoice Date</mat-label>
+            <input matInput [matDatepicker]="dp1" formControlName="invoiceDate">
+            <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+            <mat-datepicker #dp1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Tax Amount</mat-label>
+            <input matInput formControlName="taxAmount">
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Total Amount</mat-label>
+            <input matInput formControlName="totalAmount">
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Valid From</mat-label>
+            <input matInput [matDatepicker]="dp2" formControlName="validFrom">
+            <mat-datepicker-toggle matIconSuffix [for]="dp2"></mat-datepicker-toggle>
+            <mat-datepicker #dp2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+          <mat-form-field>
+            <mat-label>Valid Till</mat-label>
+            <input matInput [matDatepicker]="dp3" formControlName="validTill">
+            <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </mat-dialog-content>
+      <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+        <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">
+          Create Invoice
+        </button>
+        <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">
+          Update Invoice
+        </button>
+      </mat-dialog-actions>
+    </form>
+  </mat-expansion-panel>
+  <mat-divider></mat-divider>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Extract Data from image </mat-panel-title>
+    </mat-expansion-panel-header>
+    <input type="file"  (change)="onFileChange($event)" accept="image/*"/>
+
+    <textarea>{{extractedImage}}</textarea>
+  </mat-expansion-panel>
+
+</div>
+

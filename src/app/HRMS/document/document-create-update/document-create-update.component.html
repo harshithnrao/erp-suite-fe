@@ -1,0 +1,102 @@
+<div mat-dialog-title *ngIf="true">{{ isCreateMode() ? 'Create' : 'Update' }} Document</div>
+<form [formGroup]="form" *ngIf="true" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" disabled>
+      </mat-form-field>
+    </div> -->
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Employee ID</mat-label>
+        <input matInput formControlName="employeeId" required>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Document Type</mat-label>
+        <input matInput formControlName="documentType" required>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Document Number</mat-label>
+        <input matInput formControlName="documentNumber" required>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Issue Date</mat-label>
+        <input matInput [matDatepicker]="startDatePicker" formControlName="issueDate" required>
+        <mat-datepicker-toggle matIconSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Expiry Date</mat-label>
+        <input matInput [matDatepicker]="endDatePicker" formControlName="expiryDate" required>
+        <mat-datepicker-toggle matIconSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" rows="4"></textarea>
+      </mat-form-field>
+    </div>
+
+    <!-- <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Approved">Approved</mat-option>
+          <mat-option value="Pending">Pending</mat-option>
+          <mat-option value="Rejected">Rejected</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> -->
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid From</mat-label>
+        <input matInput [matDatepicker]="validFromPicker" formControlName="validFrom" disabled>
+        <mat-datepicker-toggle matIconSuffix [for]="validFromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #validFromPicker ></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-form-field>
+        <mat-label>Valid Till</mat-label>
+        <input matInput [matDatepicker]="validTillPicker" formControlName="validTill" disabled>
+        <mat-datepicker-toggle matIconSuffix [for]="validTillPicker"></mat-datepicker-toggle>
+        <mat-datepicker #validTillPicker ></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="24px">
+      <mat-label>Document File</mat-label>
+      <input type="file" (change)="onFileSelect($event)" required />
+
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <!-- <button *ngIf="isCreateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Create
+      Document</button>
+    <button *ngIf="isUpdateMode()" (click)="save()" mat-flat-button color="primary" [disabled]="!form.valid">Update
+      Document</button> -->
+    <button mat-button type="submit" [disabled]="!form.valid || !selectedFile">Create</button>
+
+  </mat-dialog-actions>
+</form>

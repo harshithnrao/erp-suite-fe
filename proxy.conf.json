@@ -1,0 +1,16 @@
+{
+  "/api/*": {
+    "target": "http://localhost:8080/",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {}
+  },
+  "/ai/*": {
+    "target": "http://localhost:5001",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {}
+  }
+}
